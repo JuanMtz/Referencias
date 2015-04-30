@@ -23,7 +23,7 @@ public class publicacionesSQL {
 
      public static List<publicaciones> obtenerpublicaciones() {
         List<publicaciones> lstpublicaciones = new ArrayList<publicaciones>();
-        String query = "Select Idp, Nombre, Editorial, Edición, Lugar, Año, Paginas from publicaciones;";
+        String query = "Select Idp, Nombre, Editorial, Edicion, Lugar, Año, Paginas from publicaciones;";
         Connection cn = Conexion.getConexion();
         try {
             PreparedStatement pst = cn.prepareStatement(query);
@@ -32,19 +32,20 @@ public class publicacionesSQL {
                 int Idp = rs.getInt(1);
                 String Nombre = rs.getString(2);
                 String Editorial = rs.getString(3);
-                String Edición = rs.getString(4);
+                int Edicion = rs.getInt(4);
                 String Lugar = rs.getString(5);
                 int Año = rs.getInt(6);
                 String Paginas = rs.getString(7);
 
                 publicaciones a = new publicaciones();
-                a.Idp(Idp);
-                a.Nombre(Nombre);
-                a.Editorial(Editorial);
-                a.Edicion(Edición);
-                a.Lugar(Lugar);
-                a.Año(Año);
-                a.Paginas(Paginas);
+                a.setIdp(Idp);
+                a.setNombre(Nombre);
+                a.setEditorial(Editorial);
+                a.setEdicion(Edicion);
+                a.setLugar(Lugar);
+                a.setAño(Año);
+                a.setPaginas(Paginas);
+
 
                 lstpublicaciones.add(a);
             }

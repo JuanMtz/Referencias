@@ -86,7 +86,7 @@ public class publicaciones {
 
  @Override
     public String toString() {
-        return "Publicación{" + "id=" + Idp + "," + Nombre + "," + Editorial + "," + Edicion + Lugar + "," + Año + "," + Paginas + '}';
+        return "Publicación{" + "id=" + Idp + "," + Nombre + "," + Editorial + "," + Edicion + "," + Lugar + "," + Año + "," + Paginas + '}';
     }
 
     public void Idp(int Idp) {
